@@ -142,6 +142,7 @@ section p strong{color:var(--bone);font-weight:650}
 .pill .n{color:var(--red)}
 .pill h3{margin:8px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.1vw,32px);line-height:1;text-transform:uppercase}
 .pill p{margin:0;color:var(--bone-2);font-size:16px}
+.pill .ex{display:block;margin:0 0 12px;color:var(--red);font-weight:700;font-size:17px;line-height:1.3}
 .pill .tx{display:flex;flex-direction:column;flex:1}
 .pill .proof{align-self:flex-start;margin-top:auto;transform:translateY(10px);padding:6px 12px;border-radius:999px;background:rgba(245,59,30,.14);border:1px solid rgba(245,59,30,.45);color:var(--bone);font-weight:650;font-size:14px}
 
@@ -187,6 +188,7 @@ section p strong{color:var(--bone);font-weight:650}
 .wp{flex:0 0 auto;width:clamp(110px,11vw,140px);display:flex;flex-direction:column;align-items:center;gap:12px;background:none;border:0;padding:0;color:var(--bone);cursor:pointer;scroll-snap-align:center;font:inherit}
 .wp .mk{--s:96px;position:relative;width:var(--s);height:var(--s);border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--mkbg,var(--bone));box-shadow:0 0 0 3px var(--ground),0 0 0 5px var(--pc);transition:transform .5s var(--ease),box-shadow .4s var(--ease)}
 .wp .mk img{width:78%;height:78%;object-fit:contain}
+.wp .mk img.cover{width:100%;height:100%;object-fit:cover}
 .wp .mk svg{width:46%;height:46%;color:var(--pc)}
 .wp .nm{font-weight:700;font-size:15px;line-height:1.2;text-align:center}
 .wp:hover .mk{transform:translateY(-6px)}
@@ -318,7 +320,7 @@ section p strong{color:var(--bone);font-weight:650}
       </div>
     </div>
     <figure class="visor">
-      <img src="assets/retrato.png" alt="Retrato de Iker Garcinuño" width="590" height="1278">
+      <img src="assets/retrato-hero.jpg" alt="Retrato de Iker Garcinuño" width="533" height="666" style="object-position:50% 30%">
     </figure>
   </div>
   <div class="route-out osd">
@@ -370,15 +372,15 @@ section p strong{color:var(--bone);font-weight:650}
     <div class="pillars">
       <article class="pill rv">
         <div class="im"><img src="assets/charla-1.jpg" alt="Iker presentando delante de un público" loading="lazy"></div>
-        <div class="tx"><span class="n osd">01 · Comunicación, ventas y contenido</span><h3>Vendo y genero audiencia</h3><p>Articulo ideas complejas y adapto el discurso a quien tengo delante: así negocio y vendo desde servicios tecnológicos hasta consultoría o eventos. Y llevo ese mismo mensaje a las redes, con contenido que genera tracción y audiencia para mi marca y para clientes.</p><span class="proof">+10M interacciones · +10 servicios vendidos</span></div>
+        <div class="tx"><span class="n osd">01</span><h3>Comunicación, ventas y contenido</h3><span class="ex">Vendo y genero audiencia</span><p>Articulo ideas complejas y adapto el discurso a quien tengo delante: así negocio y vendo desde servicios tecnológicos hasta consultoría o eventos. Y llevo ese mismo mensaje a las redes, con contenido que genera tracción y audiencia para mi marca y para clientes.</p><span class="proof">+10M interacciones · +10 servicios vendidos</span></div>
       </article>
       <article class="pill rv">
-        <div class="im"><img src="assets/fs-cartel-india.jpg" alt="Cartel de un torneo de Football Society en India" loading="lazy" style="object-position:50% 30%"></div>
-        <div class="tx"><span class="n osd">02 · Estrategia y procesos</span><h3>Escalo lo que funciona</h3><p>Diseño estrategias de crecimiento y las llevo a la operativa: ordeno procesos, monto sistemas y uso IA para que el negocio funcione con eficacia y pueda crecer sin depender de una sola persona.</p><span class="proof">De un torneo a 9 en 3 países</span></div>
+        <div class="im"><img src="assets/radio.jpg" alt="Iker en una entrevista en Radio Euskadi" loading="lazy" style="object-position:50% 35%"></div>
+        <div class="tx"><span class="n osd">02</span><h3>Estrategia y procesos</h3><span class="ex">Escalo lo que funciona</span><p>Diseño estrategias de crecimiento y las llevo a la operativa: ordeno procesos, monto sistemas y uso IA para que el negocio funcione con eficacia y pueda crecer sin depender de una sola persona.</p><span class="proof">De un torneo a 9 en 3 países</span></div>
       </article>
       <article class="pill rv">
         <div class="im"><img src="assets/charla-auditorio.jpg" alt="Iker dinamizando una sesión con un grupo grande" loading="lazy"></div>
-        <div class="tx"><span class="n osd">03 · Liderazgo y coordinación</span><h3>Desatasco proyectos</h3><p>Entro a la trinchera cuando las cosas se complican: tomo el mando en fases críticas, pivoto proyectos estancados y coordino a equipos y personas para que todos tiren en la misma dirección.</p><span class="proof">Equipo de 14 · +3.500 jugadores coordinados</span></div>
+        <div class="tx"><span class="n osd">03</span><h3>Liderazgo y coordinación</h3><span class="ex">Desatasco proyectos</span><p>Entro a la trinchera cuando las cosas se complican: tomo el mando en fases críticas, pivoto proyectos estancados y coordino a equipos y personas para que todos tiren en la misma dirección.</p><span class="proof">Equipo de 14 · +3.500 jugadores coordinados</span></div>
       </article>
     </div>
   </div>
@@ -464,6 +466,7 @@ section p strong{color:var(--bone);font-weight:650}
 <script>
 (function(){
 const ICON={
+  reels:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 8.5h18M8.5 3l3 5.5M14 3l3 5.5"/><path d="M10 12v5l4.5-2.5z" fill="currentColor"/></svg>',
   helmet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18v-3a7 7 0 0114 0v3"/><path d="M10 8V5h4v3M12 5v4"/></svg>',
   cube:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>',
   play:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>',
@@ -480,27 +483,27 @@ const P=[
   l:"Escuchar al sector antes de venderle nada, y llevar a cada reunión algo ya montado con sus datos.",
   img:"assets/oficios-portada.jpg",alt:"Proyecto de transformación de la construcción",cap:"Transformar la construcción · Bizkaia, 2026",
   thumbs:["assets/oficios-visita.jpg","assets/oficios-obra.jpg","assets/oficios-demo.jpg"]},
- {id:"fs",n:"Football Society",c:"#F53B1E",logo:"assets/fs-logo.png",mkbg:"#000",y:"2023–hoy",
+ {id:"fs",n:"Football Society",c:"#3FA34D",photo:"assets/fs-logo-verde.jpg",y:"2023–hoy",
   r:"Fundador · marca, contenido y operaciones",k:"9 torneos en 3 países",
   d:"Marca y empresa de eventos de fútbol competitivo para cuadrillas. Cubrimos el hueco entre el fútbol federado (demasiado exigente) y los torneos de barrio (sin organización). Todos los posts y la coordinación de cada torneo, liderados por mí.",
   nums:["+3.500 jugadores","España, India y Corea","+32.000€ (2026)","+5M interacciones en redes"],
   l:"Montar una marca desde cero, venderla a patrocinadores y coordinar a miles de personas en un mismo día.",
   img:"assets/fs-playa.jpg",alt:"Torneo de Football Society en la playa",cap:"Torneo en la playa · con patrocinadores como Coviran, Errea, Kaiku o El Correo",
-  thumbs:["assets/fs-equipo.jpg","assets/fs-jugadores.jpg","assets/fs-patrocinadores.png"]},
- {id:"v360",n:"360 Visuals",c:"#2F8FE0",icon:"cube",y:"2024–hoy",
+  thumbs:["assets/fs-equipo.jpg","assets/fs-bandera.jpg","assets/fs-patrocinadores.png"]},
+ {id:"v360",n:"360 Visuals",c:"#2F8FE0",logo:"assets/360-logo.png",y:"2024–hoy",
   r:"Tours virtuales 3D y tecnología NFC · Nueva York y Bilbao",k:"Prototipo en el gimnasio de San Mamés",
   d:"Escaneamos espacios en 3D para que se puedan recorrer desde el móvil: gimnasios, tiendas, laboratorios y autocaravanas. En gimnasios añadimos etiquetas NFC en las máquinas que abren un vídeo con el ejercicio: lo prototipamos para Bilbao Kirolak en el gimnasio de San Mamés. Clientes y pruebas con Bilbao Kirolak, Metropolitan, Crunch Fitness, Solace New York, Embassy o Makery Bilbo Lab.",
   nums:["San Mamés · Bilbao Kirolak","Tours 3D (Matterport)","NFC en máquinas","Crunch Fitness NY"],
   l:"Vender tecnología a negocios físicos y explicar en dos minutos por qué les hace ganar clientes.",
-  img:"assets/360-bilbao-kirolak.png",fit:"contain",bg:"#000",alt:"Planta 3D de un polideportivo de Bilbao Kirolak",cap:"Escaneo 3D completo de un polideportivo de Bilbao Kirolak",
+  img:"assets/360-bilbao-kirolak.png",fit:"contain",bg:"#000",alt:"Planta 3D de un polideportivo de Bilbao Kirolak",cap:"Escaneo 3D completo · Bilbao Kirolak",
   thumbs:["assets/360-solace-ny.jpg","assets/360-qfitness.jpg","assets/360-nfc.jpg"]},
- {id:"redes",n:"Contenido y redes",c:"#A855F7",icon:"play",y:"2023–hoy",
+ {id:"redes",n:"Contenido y redes",c:"#A855F7",icon:"reels",y:"2023–hoy",
   r:"Mi marca personal, mis proyectos y clientes",k:"+10 millones de interacciones",
   d:"Contenido y estrategia viral para mi marca personal, para mis proyectos y para clientes como Mondragon Unibertsitatea, Autocaravanas Getxo y Football Society. Idea, guion, grabación y edición, con Meta Ads cuando hace falta empujar.",
   nums:["Mondragon Unibertsitatea","Autocaravanas Getxo","Football Society","526K visualizaciones en 30 días"],
   l:"Saber qué hace que un vídeo funcione y convertir esa atención en clientes.",
   img:"assets/contenido-viral.jpg",tall:1,alt:"Vídeo de contenido con 35,9 mil visualizaciones",cap:"Uno de los vídeos: 35,9 mil visualizaciones"},
- {id:"intl",n:"India y Corea",c:"#19C2A0",icon:"globe",y:"2025–2026",
+ {id:"intl",n:"India y Corea",c:"#19C2A0",photo:"assets/hero-taj-mahal.jpg",y:"2025–2026",
   r:"Líder de proyecto · validación de modelos de negocio",k:"Proyectos en 3 continentes",
   d:"Llevé nuestros modelos de negocio a India y Corea del Sur para validarlos sobre el terreno: reuniones con empresas, eventos desde cero y torneos de Football Society en Pune. Antes, en Berlín y Nueva York, ya habíamos montado eventos y conexiones partiendo de nada.",
   nums:["Pune, India","Seúl, Corea del Sur","Berlín","Nueva York"],
@@ -511,7 +514,7 @@ const P=[
 
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=s=>document.querySelector(s);
-const mark=p=>p.logo?'<img src="'+p.logo+'" alt="">':ICON[p.icon];
+const mark=p=>p.photo?'<img class="cover" src="'+p.photo+'" alt="">':p.logo?'<img src="'+p.logo+'" alt="">':ICON[p.icon];
 
 /* rail */
 const rail=$("#rail");
