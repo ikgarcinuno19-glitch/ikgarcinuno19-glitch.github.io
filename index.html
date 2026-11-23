@@ -81,7 +81,6 @@ section p strong{color:var(--bone);font-weight:650}
 .name{position:relative;margin:0;font-family:var(--display);font-weight:400;font-size:clamp(64px,10.5vw,168px);line-height:.86;letter-spacing:.005em;text-transform:uppercase}
 .name span{display:block}
 .name .l2{color:var(--red)}
-.name .sig{position:absolute;right:4%;bottom:-.45em;font-family:var(--script);font-size:.62em;color:var(--bone);text-transform:none;transform:rotate(-8deg);pointer-events:none;text-shadow:0 4px 30px rgba(0,0,0,.6)}
 .lede{margin:clamp(34px,5vh,52px) 0 0;max-width:36ch;font-size:clamp(18px,1.6vw,23px);line-height:1.45}
 .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,4vh,36px)}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--bone-3);color:var(--bone);text-decoration:none;font-weight:650;font-size:15px;letter-spacing:.02em;background:rgba(10,10,10,.35);transition:background .3s var(--ease),border-color .3s}
@@ -97,11 +96,10 @@ section p strong{color:var(--bone);font-weight:650}
 .route-out a{text-decoration:none;display:flex;align-items:center;gap:10px}
 .route-out svg{width:16px;height:16px;color:var(--red)}
 
-.boot .tele,.boot .lede,.boot .acts,.boot .visor,.boot .route-out,.boot .sig{opacity:0;transform:translateY(14px)}
-.boot .name span:not(.sig){clip-path:inset(0 0 100% 0);transform:translateY(.3em)}
-.go .tele,.go .lede,.go .acts,.go .visor,.go .route-out,.go .sig{transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.go .sig{transform:rotate(-8deg);transition-delay:.9s}
-.go .name span:not(.sig){transition:clip-path 1.1s var(--ease),transform 1.1s var(--ease)}
+.boot .tele,.boot .lede,.boot .acts,.boot .visor,.boot .route-out{opacity:0;transform:translateY(14px)}
+.boot .name span{clip-path:inset(0 0 100% 0);transform:translateY(.3em)}
+.go .tele,.go .lede,.go .acts,.go .visor,.go .route-out{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.go .name span{transition:clip-path 1.1s var(--ease),transform 1.1s var(--ease)}
 .go .name .l2{transition-delay:.12s}
 .go .lede{transition-delay:.35s}.go .acts{transition-delay:.45s}.go .visor{transition-delay:.25s}.go .route-out{transition-delay:.7s}.go .tele{transition-delay:.5s}
 
@@ -144,6 +142,8 @@ section p strong{color:var(--bone);font-weight:650}
 .pill .n{color:var(--red)}
 .pill h3{margin:8px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.1vw,32px);line-height:1;text-transform:uppercase}
 .pill p{margin:0;color:var(--bone-2);font-size:16px}
+.pill .tx{display:flex;flex-direction:column;flex:1}
+.pill .proof{align-self:flex-start;margin-top:auto;transform:translateY(10px);padding:6px 12px;border-radius:999px;background:rgba(245,59,30,.14);border:1px solid rgba(245,59,30,.45);color:var(--bone);font-weight:650;font-size:14px}
 
 /* ---------- LEINN ---------- */
 .leinn{position:relative;padding:clamp(80px,10vw,140px) 0;background:var(--bone);color:var(--ground)}
@@ -297,7 +297,6 @@ section p strong{color:var(--bone);font-weight:650}
   <a href="#leinn"><span>LEINN</span><i></i></a>
   <a href="#rivia"><span>Rivia</span><i></i></a>
   <a href="#proyectos"><span>Proyectos</span><i></i></a>
-  <a href="#aporto"><span>Qué aporto</span><i></i></a>
   <a href="#contacto"><span>Contacto</span><i></i></a>
 </nav>
 
@@ -306,12 +305,12 @@ section p strong{color:var(--bone);font-weight:650}
   <img class="poster" src="assets/hero-taj-mahal.jpg" alt="" aria-hidden="true">
   <div class="tele osd" aria-hidden="true">
     <span class="mono">IG<i>.</i></span>
-    <span class="chips"><span>Ahora: Mapa de oficios</span><span class="hide-s">3 continentes</span><span>2023–2026</span></span>
+    <span class="chips"><span>3 continentes</span><span class="hide-s">+10M interacciones</span><span>2023–2026</span></span>
   </div>
   <div class="hero-main">
     <div>
-      <h1 class="name"><span>Iker</span><span class="l2">Garcinuño</span><span class="sig" aria-hidden="true">the hustler</span></h1>
-      <p class="lede">Ayudo a las empresas de construcción y reformas a adaptarse a las nuevas generaciones: <strong>digitalización, captación de clientes y talento joven</strong>.</p>
+      <h1 class="name"><span>Iker</span><span class="l2">Garcinuño</span></h1>
+      <p class="lede">Ayudo a las empresas a transformarse y adaptarse a las nuevas generaciones: <strong>digitalización, captación de clientes y talento joven</strong>.</p>
       <div class="acts">
         <a class="btn prime" href="#contacto">Hablemos
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -371,15 +370,15 @@ section p strong{color:var(--bone);font-weight:650}
     <div class="pillars">
       <article class="pill rv">
         <div class="im"><img src="assets/fs-cartel-india.jpg" alt="Cartel de un torneo de Football Society en India" loading="lazy" style="object-position:50% 30%"></div>
-        <div class="tx"><span class="n osd">01</span><h3>Estrategia y contenido</h3><p>No me limito a ejecutar: conceptualizo. Diseño estrategias de crecimiento y las convierto en contenido que genera tracción y audiencia, alineando la creatividad con el objetivo comercial.</p></div>
+        <div class="tx"><span class="n osd">01 · Estrategia y contenido</span><h3>Convierto ideas en audiencia</h3><p>No me limito a ejecutar: conceptualizo. Diseño estrategias de crecimiento y las convierto en contenido que genera tracción y audiencia, alineando la creatividad con el objetivo comercial.</p><span class="proof">+10M interacciones en redes</span></div>
       </article>
       <article class="pill rv">
         <div class="im"><img src="assets/charla-1.jpg" alt="Iker presentando delante de un público" loading="lazy"></div>
-        <div class="tx"><span class="n osd">02</span><h3>Comunicación y ventas</h3><p>Articulo ideas complejas y adapto el discurso a quien tengo delante. Así negocio, consigo oportunidades y vendo desde servicios tecnológicos hasta consultoría o eventos.</p></div>
+        <div class="tx"><span class="n osd">02 · Comunicación y ventas</span><h3>Vendo en cualquier mesa</h3><p>Articulo ideas complejas y adapto el discurso a quien tengo delante. Así negocio, consigo oportunidades y vendo desde servicios tecnológicos hasta consultoría o eventos.</p><span class="proof">+10 servicios vendidos en 3 continentes</span></div>
       </article>
       <article class="pill rv">
         <div class="im"><img src="assets/charla-auditorio.jpg" alt="Iker dinamizando una sesión con un grupo grande" loading="lazy"></div>
-        <div class="tx"><span class="n osd">03</span><h3>Liderazgo transformacional</h3><p>Entro a la trinchera cuando las cosas se complican: tomo el mando en fases críticas, pivoto proyectos estancados y ordeno los flujos del equipo para devolverle la tracción.</p></div>
+        <div class="tx"><span class="n osd">03 · Liderazgo</span><h3>Desatasco proyectos</h3><p>Entro a la trinchera cuando las cosas se complican: tomo el mando en fases críticas, pivoto proyectos estancados y ordeno los flujos del equipo para devolverle la tracción.</p><span class="proof">Project Leader de un equipo de 14</span></div>
       </article>
     </div>
   </div>
@@ -401,7 +400,7 @@ section p strong{color:var(--bone);font-weight:650}
         <li><div><b>Empresa propia desde el primer año</b><span>Con mi equipo fundé Rivia en 2023: 14 personas y clientes reales.</span></div></li>
         <li><div><b>Aprender haciendo</b><span>Cada asignatura se aplica a un proyecto con dinero y clientes de verdad en juego.</span></div></li>
         <li><div><b>Viajes de aprendizaje</b><span>Proyectos y validación de negocio en tres continentes.</span></div></li>
-        <li><div><b>Reto final: Mapa de oficios</b><span>Transformar la construcción para las nuevas generaciones, con prácticas en empresa desde enero.</span></div></li>
+        <li><div><b>Reto final: transformar la construcción</b><span>Transformar la construcción para las nuevas generaciones, con prácticas en empresa desde enero.</span></div></li>
       </ol>
     </div>
     <div class="kit rv">
@@ -447,32 +446,11 @@ section p strong{color:var(--bone);font-weight:650}
   </div>
 </section>
 
-<!-- ================= REFORMAS ================= -->
-<section class="ref" id="aporto" data-sec aria-labelledby="t-ref">
-  <div class="wrap">
-    <div class="ref-head">
-      <div class="rv">
-        <span class="kicker osd">Para empresas de construcción y reformas</span>
-        <h2 class="h2" id="t-ref" style="margin:0">Cinco cosas que le sirven a tu <em>empresa</em></h2>
-      </div>
-      <p class="rv">En las visitas de Mapa de oficios lo hemos oído una y otra vez: hay trabajo de sobra, falta gente y la oficina se come el día. Todo lo que ofrezco funciona con lo que tu equipo ya usa (WhatsApp, una nota de voz, una foto) y cada punto sale de un proyecto real.</p>
-    </div>
-    <div class="skills" id="skills"></div>
-
-    <!-- Fotos de Mapa de oficios: sube los archivos con estos nombres a assets/ -->
-    <div class="ref-cases">
-      <figure class="rv"><img src="assets/oficios-visita.jpg" alt="Visita a una empresa del sector" loading="lazy"><figcaption>Visitas a empresas del sector</figcaption></figure>
-      <figure class="rv"><img src="assets/oficios-obra.jpg" alt="Un día trabajando en obra" loading="lazy"><figcaption>Un día trabajando en obra</figcaption></figure>
-      <figure class="rv"><img src="assets/oficios-demo.jpg" alt="Demo del parte de obra por voz" loading="lazy"><figcaption>Demo: parte de obra por voz</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CONTACTO ================= -->
 <section class="land" id="contacto" data-sec aria-labelledby="t-contacto">
   <div class="wrap">
     <h2 class="big rv" id="t-contacto">Let’s work<span class="script" aria-hidden="true">together</span></h2>
-    <p class="rv">Si tienes una empresa de construcción o reformas, te cuento qué haría en la tuya: menos papeleo, más clientes y gente joven que se quede.</p>
+    <p class="rv">Si tu empresa quiere adaptarse a las nuevas generaciones, te cuento qué haría en ella: menos papeleo, más clientes y gente joven que se quede.</p>
     <div class="contact rv">
       <a class="prime" href="tel:+34688737179"><span class="osd">Teléfono</span><b>+34 688 737 179</b></a>
       <a href="mailto:ikgarcinuno19@gmail.com"><span class="osd">Correo</span><b>ikgarcinuno19@<wbr>gmail.com</b></a>
@@ -495,12 +473,12 @@ const ICON={
 
 /* ---- PROYECTOS: edita aquí textos e imágenes ---- */
 const P=[
- {id:"oficios",n:"Mapa de oficios",c:"#FFB020",icon:"helmet",y:"2026–hoy",
+ {id:"oficios",n:"Construcción",c:"#FFB020",icon:"helmet",y:"2026–hoy",
   r:"Proyecto actual · con Alejandro Kamuchey · reto final de LEINN",k:"Unas 14 entrevistas y visitas al sector",
   d:"La construcción y las reformas en Bizkaia tienen trabajo de sobra y no encuentran relevo. Hemos hablado con constructoras, reformistas, electricistas, instaladores, centros de FP e instituciones del sector, e incluso pasamos un día trabajando en obra. La conclusión: no basta con captar jóvenes, hay que modernizar cómo trabaja la empresa. Con eso hemos montado un sistema de obra que funciona con lo que la gente ya usa: una nota de voz, una foto o un correo. Yo llevo la parte de captación y retención de talento; Alejandro, la digitalización.",
   nums:["Parte de obra por voz","Factura por foto","Margen de cada obra","Captación y retención","Ayudas de digitalización"],
   l:"Escuchar al sector antes de venderle nada, y llevar a cada reunión algo ya montado con sus datos.",
-  img:"assets/oficios-portada.jpg",alt:"Mapa de oficios",cap:"Mapa de oficios · Bizkaia, 2026",
+  img:"assets/oficios-portada.jpg",alt:"Proyecto de transformación de la construcción",cap:"Transformar la construcción · Bizkaia, 2026",
   thumbs:["assets/oficios-visita.jpg","assets/oficios-obra.jpg","assets/oficios-demo.jpg"]},
  {id:"fs",n:"Football Society",c:"#F53B1E",logo:"assets/fs-logo.png",mkbg:"#000",y:"2023–hoy",
   r:"Fundador · marca, contenido y operaciones",k:"9 torneos en 3 países",
@@ -510,15 +488,15 @@ const P=[
   img:"assets/fs-playa.jpg",alt:"Torneo de Football Society en la playa",cap:"Torneo en la playa · con patrocinadores como Coviran, Errea, Kaiku o El Correo",
   thumbs:["assets/fs-equipo.jpg","assets/fs-jugadores.jpg","assets/fs-patrocinadores.png"]},
  {id:"v360",n:"360 Visuals",c:"#2F8FE0",icon:"cube",y:"2024–hoy",
-  r:"Tours virtuales 3D y tecnología NFC · Nueva York y Bilbao",k:"Prototipado y validado en NY y Bilbao",
-  d:"Escaneamos espacios en 3D para que se puedan recorrer desde el móvil: gimnasios, tiendas, laboratorios y autocaravanas. En gimnasios añadimos etiquetas NFC en las máquinas que abren un vídeo con el ejercicio. Clientes y pruebas con Bilbao Kirolak, Metropolitan, Crunch Fitness, Solace New York, Embassy o Makery Bilbo Lab.",
-  nums:["Tours 3D (Matterport)","NFC en máquinas","Bilbao Kirolak","Crunch Fitness NY"],
+  r:"Tours virtuales 3D y tecnología NFC · Nueva York y Bilbao",k:"Prototipo en el gimnasio de San Mamés",
+  d:"Escaneamos espacios en 3D para que se puedan recorrer desde el móvil: gimnasios, tiendas, laboratorios y autocaravanas. En gimnasios añadimos etiquetas NFC en las máquinas que abren un vídeo con el ejercicio: lo prototipamos para Bilbao Kirolak en el gimnasio de San Mamés. Clientes y pruebas con Bilbao Kirolak, Metropolitan, Crunch Fitness, Solace New York, Embassy o Makery Bilbo Lab.",
+  nums:["San Mamés · Bilbao Kirolak","Tours 3D (Matterport)","NFC en máquinas","Crunch Fitness NY"],
   l:"Vender tecnología a negocios físicos y explicar en dos minutos por qué les hace ganar clientes.",
   img:"assets/360-bilbao-kirolak.png",fit:"contain",bg:"#000",alt:"Planta 3D de un polideportivo de Bilbao Kirolak",cap:"Escaneo 3D completo de un polideportivo de Bilbao Kirolak",
   thumbs:["assets/360-solace-ny.jpg","assets/360-qfitness.jpg","assets/360-nfc.jpg"]},
  {id:"redes",n:"Contenido y redes",c:"#A855F7",icon:"play",y:"2023–hoy",
-  r:"Estrategia viral para proyectos propios y clientes",k:"+10 millones de interacciones",
-  d:"Gestión de redes, contenido y estrategia viral para proyectos propios y para clientes como Mondragon Unibertsitatea, Autocaravanas Getxo y Football Society. Idea, guion, grabación y edición, con Meta Ads cuando hace falta empujar.",
+  r:"Mi marca personal, mis proyectos y clientes",k:"+10 millones de interacciones",
+  d:"Contenido y estrategia viral para mi marca personal, para mis proyectos y para clientes como Mondragon Unibertsitatea, Autocaravanas Getxo y Football Society. Idea, guion, grabación y edición, con Meta Ads cuando hace falta empujar.",
   nums:["Mondragon Unibertsitatea","Autocaravanas Getxo","Football Society","526K visualizaciones en 30 días"],
   l:"Saber qué hace que un vídeo funcione y convertir esa atención en clientes.",
   img:"assets/contenido-viral.jpg",tall:1,alt:"Vídeo de contenido con 35,9 mil visualizaciones",cap:"Uno de los vídeos: 35,9 mil visualizaciones"},
@@ -529,15 +507,6 @@ const P=[
   l:"Abrir puertas en un país donde no conoces a nadie y adaptar el discurso a cada cultura.",
   img:"assets/india-oficina.jpg",alt:"Reunión con una empresa en India",cap:"Reunión con una empresa en India",
   thumbs:["assets/corea.jpg","assets/india-dibujo.jpg","assets/fs-cartel-india.jpg"]}
-];
-
-/* ---- REFORMAS: qué aporto a una empresa de reformas ---- */
-const SK=[
- {t:"Partes de obra por voz",d:"El encargado manda un audio de 30 segundos al acabar el día y sale el parte ordenado: quién ha estado, horas, avance, material que falta e incidencias. La oficina se entera ese mismo día, no cuando ya es tarde.",s:["oficios"]},
- {t:"Facturas y margen de cada obra",d:"Una foto a la factura del proveedor y se cruza sola con el pedido y el presupuesto: avisa si falta el pedido, si no cuadra o si un capítulo se pasa. Ves cuánto ibas a ganar en cada obra y cuánto llevas. Y te ayudo a pedir las ayudas de digitalización para pagarlo.",s:["oficios","rivia"]},
- {t:"Captar y retener gente joven",d:"Ofertas que cuentan qué ofrece la empresa, condiciones claras, formación interna y una cultura en la que la gente quiera quedarse. Sé qué mueve a la gente de 18 a 25 años y cómo hablarle.",s:["oficios","fs"]},
- {t:"Enseñar tus obras",d:"Tours 3D de las reformas terminadas y vídeos de antes y después, para que el cliente vea tu trabajo antes de llamarte y cierres presupuestos con menos visitas.",s:["v360","redes"]},
- {t:"Captación de clientes",d:"Campañas en Meta Ads, redes con contenido y una web clara, con un seguimiento ordenado para que ninguna solicitud de presupuesto se quede sin respuesta.",s:["redes","v360"]}
 ];
 
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -589,26 +558,6 @@ function select(i,focus){
   setTimeout(()=>{render(p);body.classList.remove("out")},260);
 }
 select(0);
-
-/* reformas */
-const SRC={rivia:{n:"Rivia",c:"#EFEEEC"}};
-const sk=$("#skills");
-SK.forEach((s,k)=>{
-  const row=document.createElement("div");row.className="sk rv";
-  const src=s.s.map(id=>P.find(p=>p.id===id)||Object.assign({id},SRC[id]));
-  row.style.setProperty("--a",src[0].c);
-  const chips=src.map(p=>'<button type="button" data-go="'+p.id+'" style="--pc:'+p.c+'">'+p.n+'</button>').join("");
-  row.innerHTML='<span class="num">'+String(k+1).padStart(2,"0")+'</span><h3>'+s.t+'</h3><div><p>'+s.d+'</p><div class="from osd">Sale de '+chips+'</div></div>';
-  sk.appendChild(row);
-});
-sk.addEventListener("click",e=>{
-  const b=e.target.closest("[data-go]");if(!b)return;
-  const id=b.dataset.go;
-  if(id==="rivia"){$("#rivia").scrollIntoView({behavior:reduce?"auto":"smooth"});return}
-  const i=P.findIndex(p=>p.id===id);
-  $("#proyectos").scrollIntoView({behavior:reduce?"auto":"smooth"});
-  setTimeout(()=>select(i),reduce?0:650);
-});
 
 /* imágenes que falten: muestra un hueco con el nombre del archivo */
 function guard(root){
