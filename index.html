@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iker Garcinuño · Portfolio</title>
+<meta name="description" content="Iker Garcinuño Fernández. Ayudo a transformar empresas para las nuevas generaciones: digitalización, captación de clientes y talento joven. LEINN · Mondragon Unibertsitatea.">
+<meta property="og:title" content="Iker Garcinuño · Portfolio">
+<meta property="og:description" content="Digitalización, captación de clientes y talento joven para empresas de reformas y pymes.">
+<meta property="og:image" content="assets/hero-taj-mahal.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,300..900&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0A0A0A;
+  --ground-2:#151515;
+  --bone:#EFEEEC;
+  --bone-2:rgba(239,238,236,.76);
+  --bone-3:rgba(239,238,236,.6);
+  --line:rgba(239,238,236,.22);
+  --red:#F53B1E;
+  --red-h:#FF5A3F;
+  --r:18px;
+  --r-s:12px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gut:clamp(20px,4vw,64px);
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --script:"Mrs Saint Delafield",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--red) var(--ground)}
+body{margin:0;background:var(--ground);color:var(--bone);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+::selection{background:var(--red);color:var(--bone)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--ground)}::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:8px}::-webkit-scrollbar-thumb:hover{background:var(--red)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.osd{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase}
+.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto}
+.h2{margin:0 0 clamp(18px,2.4vw,28px);font-family:var(--display);font-weight:400;font-size:clamp(40px,5.4vw,84px);line-height:.95;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
+.h2 em{font-style:normal;color:var(--red)}
+.kicker{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--red)}
+.kicker::before{content:"";width:34px;height:1px;background:currentColor}
+.script{font-family:var(--script);font-weight:400;color:var(--red);text-transform:none;letter-spacing:0;line-height:1}
+section p strong{color:var(--bone);font-weight:650}
+
+/* missing image placeholder */
+.ph{position:relative;background:repeating-linear-gradient(45deg,#161616 0 12px,#1c1c1c 12px 24px)}
+.ph{display:grid;place-items:center;min-height:120px;outline:1px dashed rgba(239,238,236,.28);outline-offset:-1px}
+.ph::before{content:"";width:34px;height:34px;opacity:.5;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EFEEEC' stroke-width='1.6'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Ccircle cx='9' cy='10' r='2'/%3E%3Cpath d='M21 16l-5-5-9 9'/%3E%3C/svg%3E")}
+.ph::after{content:"Imagen: " attr(data-src);position:absolute;inset:auto 10px 10px 10px;font-size:12px;color:var(--bone-3);text-transform:none;letter-spacing:0;font-weight:500}
+
+/* ---------- side nav ---------- */
+.rnav{position:fixed;right:clamp(10px,1.6vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.rnav a span{padding:3px 9px;border-radius:999px;background:rgba(10,10,10,.85);color:var(--bone)}
+.rnav.light a{color:rgba(10,10,10,.55)}
+.rnav.light a[aria-current="true"]{color:var(--red)}
+.rnav a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--bone-3);transition:color .3s}
+.rnav a span{opacity:0;transform:translateX(6px);transition:opacity .3s,transform .3s var(--ease)}
+.rnav a i{width:9px;height:9px;border:1.5px solid currentColor;border-radius:50%;transition:background .3s,transform .3s var(--ease)}
+.rnav a:hover span,.rnav a:focus-visible span{opacity:1;transform:none}
+.rnav a[aria-current="true"]{color:var(--red)}
+.rnav a[aria-current="true"] i{background:var(--red);transform:scale(1.35)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;z-index:-2;filter:saturate(.85)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.8) 45%,rgba(10,10,10,.35) 78%,rgba(10,10,10,.55) 100%),
+  linear-gradient(0deg,rgba(10,10,10,1) 0%,rgba(10,10,10,0) 30%)}
+.tele{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(24px,3.2vw,40px) var(--gut) 0;color:var(--bone-2)}
+.tele .mono{font-family:var(--display);font-size:26px;letter-spacing:.02em;color:var(--bone)}
+.tele .mono i{font-style:normal;color:var(--red)}
+.tele .chips{display:flex;gap:8px}
+.tele .chips span{padding:6px 12px;border-radius:999px;background:rgba(239,238,236,.08);border:1px solid rgba(239,238,236,.14);color:var(--bone);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-main{flex:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,5vw,90px);align-items:center;padding:clamp(28px,5vh,60px) var(--gut) clamp(90px,14vh,150px)}
+.name{position:relative;margin:0;font-family:var(--display);font-weight:400;font-size:clamp(64px,10.5vw,168px);line-height:.86;letter-spacing:.005em;text-transform:uppercase}
+.name span{display:block}
+.name .l2{color:var(--red)}
+.name .sig{position:absolute;right:4%;bottom:-.45em;font-family:var(--script);font-size:.62em;color:var(--bone);text-transform:none;transform:rotate(-8deg);pointer-events:none;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.lede{margin:clamp(34px,5vh,52px) 0 0;max-width:36ch;font-size:clamp(18px,1.6vw,23px);line-height:1.45}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,4vh,36px)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--bone-3);color:var(--bone);text-decoration:none;font-weight:650;font-size:15px;letter-spacing:.02em;background:rgba(10,10,10,.35);transition:background .3s var(--ease),border-color .3s}
+.btn:hover{border-color:var(--bone);background:rgba(239,238,236,.08)}
+.btn.prime{background:var(--red);border-color:var(--red)}
+.btn.prime:hover{background:var(--red-h);border-color:var(--red-h)}
+.btn svg{width:18px;height:18px}
+.visor{position:relative;justify-self:center;width:min(100%,360px);margin:0;isolation:isolate}
+.visor img,.visor .ph{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 100%;border-radius:var(--r);border:1px solid rgba(239,238,236,.18);box-shadow:0 30px 60px -24px rgba(0,0,0,.7);background:#000}
+.visor::before{content:"";position:absolute;inset:auto -14px -14px auto;width:62%;height:62%;border-radius:var(--r);background:var(--red);z-index:-1}
+.route-out{position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(30px,5vh,48px);display:flex;align-items:center;gap:16px;color:var(--bone-2)}
+.route-out .dash{flex:1;height:1px;background:rgba(239,238,236,.2)}
+.route-out a{text-decoration:none;display:flex;align-items:center;gap:10px}
+.route-out svg{width:16px;height:16px;color:var(--red)}
+
+.boot .tele,.boot .lede,.boot .acts,.boot .visor,.boot .route-out,.boot .sig{opacity:0;transform:translateY(14px)}
+.boot .name span:not(.sig){clip-path:inset(0 0 100% 0);transform:translateY(.3em)}
+.go .tele,.go .lede,.go .acts,.go .visor,.go .route-out,.go .sig{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.go .sig{transform:rotate(-8deg);transition-delay:.9s}
+.go .name span:not(.sig){transition:clip-path 1.1s var(--ease),transform 1.1s var(--ease)}
+.go .name .l2{transition-delay:.12s}
+.go .lede{transition-delay:.35s}.go .acts{transition-delay:.45s}.go .visor{transition-delay:.25s}.go .route-out{transition-delay:.7s}.go .tele{transition-delay:.5s}
+
+/* ---------- stats band ---------- */
+.band{border-block:1px solid var(--line);background:var(--ground-2)}
+.band .wrap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.stat{padding:clamp(20px,2.6vw,34px) clamp(10px,1.4vw,20px)}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,56px);line-height:1;color:var(--bone)}
+.stat b i{font-style:normal;color:var(--red)}
+.stat span{display:block;margin-top:8px;color:var(--bone-3)}
+
+/* ---------- about ---------- */
+.about{padding:clamp(80px,10vw,140px) 0 clamp(60px,8vw,110px)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,6vw,96px);align-items:start}
+.about .h2 .script{display:inline-block;font-size:.8em;margin-left:.1em;transform:rotate(-6deg) translateY(.1em)}
+.about p{margin:0 0 1.1em;max-width:60ch;color:var(--bone-2);font-size:clamp(17px,1.25vw,19px)}
+.about .big-p{font-size:clamp(20px,1.8vw,26px);line-height:1.4;color:var(--bone);max-width:30ch}
+.values{margin:32px 0 0;border-top:1px solid var(--line)}
+.values div{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.values dt{color:var(--red)}
+.values dd{margin:0;color:var(--bone)}
+.values dd span{display:block;color:var(--bone-2);font-size:16px}
+.globe figure{margin:0;position:relative}
+.globe img,.globe .ph{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 55%;border-radius:var(--r-s)}
+.globe figcaption{margin-top:10px;color:var(--bone-3)}
+.globe .tag{position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:999px;background:var(--red);color:var(--bone)}
+.cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.city{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px}
+.city i{width:6px;height:6px;border-radius:50%;background:var(--red)}
+
+/* three pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(50px,7vw,90px)}
+.pill{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);background:var(--ground-2);overflow:hidden;transition:border-color .4s,transform .5s var(--ease)}
+.pill:hover{border-color:var(--red);transform:translateY(-4px)}
+.pill .im{aspect-ratio:16/10;overflow:hidden}
+.pill .im img,.pill .im .ph{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.pill:hover .im img{transform:scale(1.04)}
+.pill .tx{padding:22px 24px 26px}
+.pill .n{color:var(--red)}
+.pill h3{margin:8px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.1vw,32px);line-height:1;text-transform:uppercase}
+.pill p{margin:0;color:var(--bone-2);font-size:16px}
+
+/* ---------- LEINN ---------- */
+.leinn{position:relative;padding:clamp(80px,10vw,140px) 0;background:var(--bone);color:var(--ground)}
+.leinn .kicker{color:var(--red)}
+.leinn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,96px);align-items:start}
+.leinn .acr{display:flex;flex-wrap:wrap;gap:0 .25em;margin:0 0 8px;font-family:var(--display);font-size:clamp(80px,13vw,210px);line-height:.85;text-transform:uppercase;color:var(--red)}
+.leinn .full{margin:0 0 26px;font-weight:700;font-size:clamp(18px,1.5vw,22px)}
+.leinn p{margin:0 0 1.1em;max-width:60ch;font-size:clamp(17px,1.25vw,19px);color:rgba(10,10,10,.78)}
+.leinn p strong{color:var(--ground)}
+.how{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:h}
+.how li{counter-increment:h;display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 20px;border-radius:var(--r-s);background:#fff;border:1px solid rgba(10,10,10,.08)}
+.how li::before{content:counter(h,decimal-leading-zero);font-family:var(--display);font-size:30px;line-height:1;color:var(--red)}
+.how b{display:block;font-size:17px}
+.how span{display:block;color:rgba(10,10,10,.68);font-size:15.5px;line-height:1.5}
+.kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px);margin-top:clamp(40px,5vw,64px);padding-top:clamp(28px,3vw,40px);border-top:2px solid var(--ground)}
+.kit h3{margin:0 0 12px;color:var(--red)}
+.kit ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.kit li{padding:7px 14px;border-radius:999px;border:1px solid rgba(10,10,10,.2);font-weight:600;font-size:15px}
+
+/* ---------- Rivia ---------- */
+.base{padding:clamp(80px,9vw,120px) 0 clamp(20px,3vw,40px)}
+.base-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,60px);align-items:center;padding:clamp(28px,4vw,52px);border:1px solid var(--line);border-radius:var(--r);background:var(--ground-2)}
+.pad{width:clamp(160px,17vw,240px);aspect-ratio:1;display:grid;place-items:center;border-radius:var(--r);background:var(--red)}
+.pad span{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(40px,4.4vw,64px);letter-spacing:-.04em;color:var(--ground)}
+.base-card .h2{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.base-card .yr{color:var(--red);font-family:"Archivo",sans-serif}
+.base-card p{margin:0 0 14px;max-width:62ch;color:var(--bone-2);font-size:clamp(17px,1.25vw,19px)}
+.rv-data{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0 18px}
+.rv-data div{padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line)}
+.rv-data b{display:block;font-family:var(--display);font-weight:400;font-size:30px;line-height:1.05;color:var(--red)}
+.rv-data span{color:var(--bone-2);font-size:14.5px}
+.down{display:inline-flex;gap:10px;align-items:center;font-weight:600}
+.down svg{width:16px;height:16px;color:var(--red)}
+
+/* ---------- projects ---------- */
+.route{padding:clamp(20px,3vw,40px) 0 clamp(70px,9vw,120px)}
+.route-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.route-head p{margin:0;color:var(--bone-3)}
+.rail{display:flex;justify-content:flex-start;gap:clamp(20px,3vw,44px);overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 6px 14px;margin-top:clamp(20px,3vw,34px);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.wp{flex:0 0 auto;width:clamp(110px,11vw,140px);display:flex;flex-direction:column;align-items:center;gap:12px;background:none;border:0;padding:0;color:var(--bone);cursor:pointer;scroll-snap-align:center;font:inherit}
+.wp .mk{--s:96px;position:relative;width:var(--s);height:var(--s);border-radius:50%;display:grid;place-items:center;overflow:hidden;background:var(--mkbg,var(--bone));box-shadow:0 0 0 3px var(--ground),0 0 0 5px var(--pc);transition:transform .5s var(--ease),box-shadow .4s var(--ease)}
+.wp .mk img{width:78%;height:78%;object-fit:contain}
+.wp .mk svg{width:46%;height:46%;color:var(--pc)}
+.wp .nm{font-weight:700;font-size:15px;line-height:1.2;text-align:center}
+.wp:hover .mk{transform:translateY(-6px)}
+.wp[aria-selected="true"] .mk{transform:translateY(-6px) scale(1.06);box-shadow:0 0 0 3px var(--ground),0 0 0 7px var(--pc),0 18px 40px -12px var(--pc)}
+.panel{--c:#F53B1E;position:relative;margin-top:clamp(18px,2vw,26px);overflow:hidden;isolation:isolate;background:color-mix(in oklab,var(--c) 22%,var(--ground));border:1px solid color-mix(in oklab,var(--c) 55%,transparent);border-radius:var(--r);transition:background .7s var(--ease),border-color .7s var(--ease)}
+.status{display:flex;justify-content:space-between;gap:16px;padding:16px clamp(22px,3vw,40px);border-bottom:1px solid color-mix(in oklab,var(--c) 50%,transparent);color:var(--bone-2)}
+.status .live{color:var(--bone)}
+.pbody{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,60px);padding:clamp(24px,3.4vw,46px) clamp(22px,3vw,40px) clamp(28px,3.6vw,48px)}
+.ptitle{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.92;text-transform:uppercase}
+.prole{margin:10px 0 0;color:var(--bone-2)}
+.plabel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:22px 0 20px;border-top:1px solid color-mix(in oklab,var(--bone) 25%,transparent)}
+.plabel div{padding:12px 0;border-bottom:1px solid color-mix(in oklab,var(--bone) 25%,transparent)}
+.plabel div+div{padding-left:18px;border-left:1px solid color-mix(in oklab,var(--bone) 25%,transparent)}
+.plabel dt{color:var(--bone-3)}
+.plabel dd{margin:4px 0 0;font-weight:700;line-height:1.3}
+.plabel .hl dd{color:var(--bone)}
+.pdesc{margin:0;max-width:60ch;font-size:clamp(17px,1.25vw,19px)}
+.pnums{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pnums span{padding:7px 13px;border-radius:999px;background:rgba(10,10,10,.45);border:1px solid color-mix(in oklab,var(--bone) 20%,transparent);font-weight:600;font-size:14.5px}
+.took{margin-top:24px;padding-top:18px;border-top:1px dashed color-mix(in oklab,var(--bone) 35%,transparent)}
+.took .osd{color:var(--c);filter:brightness(1.4)}
+.took p{margin:6px 0 0;font-size:clamp(18px,1.45vw,21px);font-weight:600;line-height:1.4;max-width:46ch}
+.shot{margin:0;align-self:start}
+.shot .img{aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-s);background:rgba(10,10,10,.5);box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.shot .img.tall{aspect-ratio:4/5}
+.shot img,.shot .ph{width:100%;height:100%;object-fit:cover}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.thumbs img,.thumbs .ph{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px}
+.shot .meta{margin-top:10px;color:var(--bone-3);line-height:1.5}
+.swap{transition:opacity .45s var(--ease),transform .6s var(--ease),filter .5s var(--ease)}
+.swap.out{opacity:0;transform:translateY(10px);filter:blur(6px)}
+
+/* ---------- reformas ---------- */
+.ref{position:relative;padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--line)}
+.ref-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,80px);align-items:end}
+.ref-head p{margin:0;color:var(--bone-2);font-size:clamp(17px,1.3vw,20px);max-width:48ch}
+.skills{margin-top:clamp(36px,4vw,60px);display:grid;gap:clamp(12px,1.4vw,18px)}
+.sk{--a:var(--red);display:grid;grid-template-columns:70px minmax(0,.9fr) minmax(0,1.2fr);gap:clamp(18px,3vw,44px);align-items:start;padding:clamp(22px,2.6vw,34px) 0;border-top:2px solid var(--a);transition:background .5s var(--ease)}
+.sk:nth-child(odd){margin-right:clamp(0px,7vw,110px)}
+.sk:nth-child(even){margin-left:clamp(0px,7vw,110px)}
+.sk:hover{background:linear-gradient(90deg,color-mix(in oklab,var(--a) 14%,transparent),transparent 70%)}
+.sk .num{font-family:var(--display);font-size:44px;line-height:.9;color:var(--a)}
+.sk h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.3vw,34px);line-height:1.02;text-transform:uppercase}
+.sk p{margin:0;color:var(--bone-2);max-width:56ch}
+.sk .from{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;color:var(--bone-3)}
+.sk .from button{font:inherit;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;color:var(--bone);background:transparent;border:1px solid var(--pc);transition:background .3s}
+.sk .from button:hover{background:color-mix(in oklab,var(--pc) 35%,transparent)}
+.ref-cases{margin-top:clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ref-cases figure{margin:0;position:relative;border-radius:var(--r-s);overflow:hidden;border:1px solid var(--line)}
+.ref-cases img,.ref-cases .ph{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ref-cases figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;background:linear-gradient(0deg,rgba(10,10,10,.9),transparent);font-size:14px;font-weight:600}
+
+/* ---------- contact ---------- */
+.land{position:relative;padding:clamp(80px,11vw,150px) 0 clamp(40px,5vw,60px);overflow:hidden;isolation:isolate}
+.land::before{content:"";position:absolute;top:0;bottom:0;right:0;width:46%;z-index:-1;background:url(assets/retrato.png) 70% 100%/auto 100% no-repeat;-webkit-mask-image:radial-gradient(ellipse 42% 62% at 64% 58%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 42% 62% at 64% 58%,#000 45%,transparent 100%)}
+.land .big{position:relative;margin:0;font-family:var(--display);font-weight:400;font-size:clamp(70px,13vw,200px);line-height:.86;text-transform:uppercase}
+.land .big .script{position:absolute;left:20%;bottom:-.5em;font-size:.78em;transform:rotate(-8deg)}
+.land p{margin:clamp(60px,7vw,100px) 0 0;max-width:40ch;font-size:clamp(19px,1.7vw,24px);line-height:1.4}
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:900px;margin-top:clamp(30px,4vw,48px)}
+.contact a{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--r-s);text-decoration:none;background:var(--ground-2);transition:border-color .3s,background .3s}
+.contact a:hover{border-color:var(--red);background:rgba(245,59,30,.1)}
+.contact a .osd{color:var(--red)}
+.contact a b{font-weight:650;font-size:17px;overflow-wrap:anywhere}
+.contact a.prime{background:var(--red);border-color:var(--red)}
+.contact a.prime .osd{color:var(--bone)}
+.contact a.prime:hover{background:var(--red-h)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:clamp(60px,8vw,100px);padding-top:18px;border-top:1px solid var(--line);color:var(--bone-3)}
+
+/* reveal */
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv:not(.in){opacity:0;transform:translateY(24px)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){.rnav{display:none}.band .wrap{grid-template-columns:repeat(3,minmax(0,1fr))}.stat:nth-child(4){border-left:0}.stat:nth-child(n+4){border-top:1px solid var(--line)}}
+@media (max-width:900px){
+  .hero-main{grid-template-columns:1fr;align-items:start;gap:30px;padding-bottom:120px}
+  .visor{grid-row:1;justify-self:start;width:min(48vw,200px)}
+  .hero::after{background:linear-gradient(180deg,rgba(10,10,10,.6) 0%,rgba(10,10,10,.85) 45%,rgba(10,10,10,.96) 100%)}
+  .rail{-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);padding-right:40px}
+  .about-grid,.leinn-grid,.pbody,.ref-head{grid-template-columns:1fr}
+  .pillars,.kit,.ref-cases{grid-template-columns:1fr}
+  .base-card{grid-template-columns:1fr}
+  .sk{grid-template-columns:1fr;gap:10px;margin:0!important}
+  .shot{order:-1}
+  .land::before{width:100%;opacity:.35}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .hide-s{display:none}
+  .values div{grid-template-columns:1fr;gap:2px}
+  .plabel,.rv-data{grid-template-columns:1fr}
+  .plabel div+div{padding-left:0;border-left:0}
+  .band .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{border-left:0!important;border-top:1px solid var(--line)}
+  .wp{width:96px}.wp .mk{--s:76px}
+  .status{flex-direction:column;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="sr" href="#proyectos">Saltar a los proyectos</a>
+
+<nav class="rnav osd" aria-label="Secciones">
+  <a href="#inicio" aria-current="true"><span>Inicio</span><i></i></a>
+  <a href="#quien-soy"><span>Quién soy</span><i></i></a>
+  <a href="#leinn"><span>LEINN</span><i></i></a>
+  <a href="#rivia"><span>Rivia</span><i></i></a>
+  <a href="#proyectos"><span>Proyectos</span><i></i></a>
+  <a href="#aporto"><span>Qué aporto</span><i></i></a>
+  <a href="#contacto"><span>Contacto</span><i></i></a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="inicio" data-sec>
+  <img class="poster" src="assets/hero-taj-mahal.jpg" alt="" aria-hidden="true">
+  <div class="tele osd" aria-hidden="true">
+    <span class="mono">IG<i>.</i></span>
+    <span class="chips"><span>Ahora: Mapa de oficios</span><span class="hide-s">3 continentes</span><span>2023–2026</span></span>
+  </div>
+  <div class="hero-main">
+    <div>
+      <h1 class="name"><span>Iker</span><span class="l2">Garcinuño</span><span class="sig" aria-hidden="true">the hustler</span></h1>
+      <p class="lede">Ayudo a las empresas de construcción y reformas a adaptarse a las nuevas generaciones: <strong>digitalización, captación de clientes y talento joven</strong>.</p>
+      <div class="acts">
+        <a class="btn prime" href="#contacto">Hablemos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+    <figure class="visor">
+      <img src="assets/retrato.png" alt="Retrato de Iker Garcinuño" width="590" height="1278">
+    </figure>
+  </div>
+  <div class="route-out osd">
+    <a href="#quien-soy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Seguir</a>
+    <span class="dash" aria-hidden="true"></span>
+  </div>
+</header>
+
+<main>
+<!-- ================= NÚMEROS ================= -->
+<div class="band" aria-label="En números">
+  <div class="wrap">
+    <div class="stat"><b><i>+</i>10M</b><span class="osd">Interacciones en redes</span></div>
+    <div class="stat"><b><i>+</i>3.500</b><span class="osd">Jugadores · Football Society</span></div>
+    <div class="stat"><b><i>+</i>210K€</b><span class="osd">Facturados con Rivia</span></div>
+    <div class="stat"><b><i>+</i>10</b><span class="osd">Servicios B2B y B2C vendidos</span></div>
+    <div class="stat"><b>3</b><span class="osd">Continentes con proyectos</span></div>
+  </div>
+</div>
+
+<!-- ================= QUIÉN SOY (Motor + Hustler) ================= -->
+<section class="about" id="quien-soy" data-sec aria-labelledby="t-quien">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="rv">
+        <span class="kicker osd">Quién soy</span>
+        <h2 class="h2" id="t-quien">El motor <span class="script">message</span></h2>
+        <p class="big-p">Mi motor es conectar el talento humano con el crecimiento real del negocio.</p>
+        <p>Lidero equipos, saco lo mejor de las personas y cojo <strong>proyectos estancados para darles tracción comercial</strong> y abrir puertas donde antes no las había.</p>
+        <p>Activo equipos y genero oportunidades. Cuando un proyecto se estanca, tomo decisiones difíciles y muevo a la gente al instante. Lo he hecho en <strong>Berlín, Nueva York, India y Corea del Sur</strong>. Ahora lo aplico a la <strong>construcción y las reformas en Bizkaia</strong>, un sector con trabajo de sobra y sin relevo.</p>
+        <dl class="values">
+          <div><dt class="osd">Transparencia y exigencia</dt><dd>Digo lo que pienso de frente.</dd></div>
+          <div><dt class="osd">Proactividad</dt><dd>Me frustra la inacción.</dd></div>
+          <div><dt class="osd">Foco en resultados</dt><dd>Cero vueltas, directo a la acción.</dd></div>
+        </dl>
+      </div>
+      <div class="globe rv">
+        <figure>
+          <img src="assets/tokio.jpg" alt="Iker en una calle de Tokio de noche" loading="lazy" width="900" height="1600">
+          <span class="tag osd">The hustler</span>
+          <figcaption class="osd">Tokio, Japón</figcaption>
+        </figure>
+        <div class="cities" aria-label="Dónde he trabajado">
+          <span class="city"><i></i>Bilbao</span><span class="city"><i></i>Berlín</span><span class="city"><i></i>Nueva York</span><span class="city"><i></i>India</span><span class="city"><i></i>Corea del Sur</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <article class="pill rv">
+        <div class="im"><img src="assets/fs-cartel-india.jpg" alt="Cartel de un torneo de Football Society en India" loading="lazy" style="object-position:50% 30%"></div>
+        <div class="tx"><span class="n osd">01</span><h3>Estrategia y contenido</h3><p>No me limito a ejecutar: conceptualizo. Diseño estrategias de crecimiento y las convierto en contenido que genera tracción y audiencia, alineando la creatividad con el objetivo comercial.</p></div>
+      </article>
+      <article class="pill rv">
+        <div class="im"><img src="assets/charla-1.jpg" alt="Iker presentando delante de un público" loading="lazy"></div>
+        <div class="tx"><span class="n osd">02</span><h3>Comunicación y ventas</h3><p>Articulo ideas complejas y adapto el discurso a quien tengo delante. Así negocio, consigo oportunidades y vendo desde servicios tecnológicos hasta consultoría o eventos.</p></div>
+      </article>
+      <article class="pill rv">
+        <div class="im"><img src="assets/charla-auditorio.jpg" alt="Iker dinamizando una sesión con un grupo grande" loading="lazy"></div>
+        <div class="tx"><span class="n osd">03</span><h3>Liderazgo transformacional</h3><p>Entro a la trinchera cuando las cosas se complican: tomo el mando en fases críticas, pivoto proyectos estancados y ordeno los flujos del equipo para devolverle la tracción.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEINN ================= -->
+<section class="leinn" id="leinn" data-sec aria-labelledby="t-leinn">
+  <div class="wrap">
+    <div class="leinn-grid">
+      <div class="rv">
+        <span class="kicker osd">Lo que he estudiado</span>
+        <h2 class="acr" id="t-leinn">LEINN</h2>
+        <p class="full">Liderazgo Emprendedor e Innovación · Mondragon Unibertsitatea</p>
+        <p>Estoy en el <strong>último año de LEINN</strong> (Mondragon Team Academy, Bilbao), en el itinerario de <strong>intraemprendimiento</strong>, un grado en el que no hay clases magistrales ni exámenes al uso: <strong>se aprende montando empresas reales desde el primer día</strong>.</p>
+        <p>Desde primero trabajamos en equipo como una empresa, con clientes, facturación y objetivos de verdad. Los coaches nos acompañan, pero los proyectos, los errores y los resultados son nuestros. Por eso ya llevo cuatro años vendiendo, liderando y lanzando proyectos, no solo estudiándolos.</p>
+        <p>Parte de la carrera se hace fuera: con LEINN he trabajado en <strong>Berlín, Nueva York, India y Corea del Sur</strong>.</p>
+      </div>
+      <ol class="how rv">
+        <li><div><b>Empresa propia desde el primer año</b><span>Con mi equipo fundé Rivia en 2023: 14 personas y clientes reales.</span></div></li>
+        <li><div><b>Aprender haciendo</b><span>Cada asignatura se aplica a un proyecto con dinero y clientes de verdad en juego.</span></div></li>
+        <li><div><b>Viajes de aprendizaje</b><span>Proyectos y validación de negocio en tres continentes.</span></div></li>
+        <li><div><b>Reto final: Mapa de oficios</b><span>Transformar la construcción para las nuevas generaciones, con prácticas en empresa desde enero.</span></div></li>
+      </ol>
+    </div>
+    <div class="kit rv">
+      <div><h3 class="osd">Formación</h3><ul><li>Contabilidad</li><li>Diseño</li><li>IA aplicada</li><li>Estrategia comercial</li></ul></div>
+      <div><h3 class="osd">Herramientas</h3><ul><li>Claude</li><li>Excel</li><li>Canva</li><li>CapCut</li><li>Meta Ads</li><li>Instagram</li><li>TikTok</li></ul></div>
+      <div><h3 class="osd">Idiomas</h3><ul><li>Español · nativo</li><li>Inglés · excelente</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RIVIA ================= -->
+<section class="base" id="rivia" data-sec aria-labelledby="t-rivia">
+  <div class="wrap">
+    <div class="base-card rv">
+      <div class="pad"><span>Rivia</span></div>
+      <div>
+        <h2 class="h2" id="t-rivia">Rivia <span class="osd yr">Berlín · 2023–hoy</span></h2>
+        <p>Rivia es la empresa que cofundé en Berlín en 2023 con mi equipo de LEINN: una empresa real, con <strong>14 personas</strong> y clientes de verdad. Empecé como <strong>Project Leader</strong>, liderando al equipo completo, después como <strong>Communication Leader</strong>, y hoy estoy en el <strong>equipo de Finanzas</strong>.</p>
+        <div class="rv-data">
+          <div><b>14</b><span>Personas en el equipo</span></div>
+          <div><b>+210.000€</b><span>Facturados desde 2023</span></div>
+          <div><b>3</b><span>Roles que he liderado</span></div>
+        </div>
+        <span class="down">Los proyectos que vienen ahora nacieron aquí
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="route" id="proyectos" data-sec aria-labelledby="t-proy">
+  <div class="wrap">
+    <div class="route-head rv">
+      <h2 class="h2" id="t-proy" style="margin:0">Qué he <em>hecho</em></h2>
+      <p class="osd">Pulsa un proyecto para abrirlo</p>
+    </div>
+    <div class="rail" role="tablist" aria-label="Proyectos" id="rail"></div>
+    <article class="panel" id="panel" role="tabpanel" aria-live="polite">
+      <div class="status osd"><span class="live" id="st"></span><span id="st2"></span></div>
+      <div class="pbody swap" id="pbody"></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= REFORMAS ================= -->
+<section class="ref" id="aporto" data-sec aria-labelledby="t-ref">
+  <div class="wrap">
+    <div class="ref-head">
+      <div class="rv">
+        <span class="kicker osd">Para empresas de construcción y reformas</span>
+        <h2 class="h2" id="t-ref" style="margin:0">Cinco cosas que le sirven a tu <em>empresa</em></h2>
+      </div>
+      <p class="rv">En las visitas de Mapa de oficios lo hemos oído una y otra vez: hay trabajo de sobra, falta gente y la oficina se come el día. Todo lo que ofrezco funciona con lo que tu equipo ya usa (WhatsApp, una nota de voz, una foto) y cada punto sale de un proyecto real.</p>
+    </div>
+    <div class="skills" id="skills"></div>
+
+    <!-- Fotos de Mapa de oficios: sube los archivos con estos nombres a assets/ -->
+    <div class="ref-cases">
+      <figure class="rv"><img src="assets/oficios-visita.jpg" alt="Visita a una empresa del sector" loading="lazy"><figcaption>Visitas a empresas del sector</figcaption></figure>
+      <figure class="rv"><img src="assets/oficios-obra.jpg" alt="Un día trabajando en obra" loading="lazy"><figcaption>Un día trabajando en obra</figcaption></figure>
+      <figure class="rv"><img src="assets/oficios-demo.jpg" alt="Demo del parte de obra por voz" loading="lazy"><figcaption>Demo: parte de obra por voz</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="land" id="contacto" data-sec aria-labelledby="t-contacto">
+  <div class="wrap">
+    <h2 class="big rv" id="t-contacto">Let’s work<span class="script" aria-hidden="true">together</span></h2>
+    <p class="rv">Si tienes una empresa de construcción o reformas, te cuento qué haría en la tuya: menos papeleo, más clientes y gente joven que se quede.</p>
+    <div class="contact rv">
+      <a class="prime" href="tel:+34688737179"><span class="osd">Teléfono</span><b>+34 688 737 179</b></a>
+      <a href="mailto:ikgarcinuno19@gmail.com"><span class="osd">Correo</span><b>ikgarcinuno19@<wbr>gmail.com</b></a>
+      <a href="https://www.linkedin.com/in/ikergarcinuno/" target="_blank" rel="noopener"><span class="osd">LinkedIn</span><b>Iker Garcinuño Fernández</b></a>
+    </div>
+    <div class="foot osd"><span>Iker Garcinuño Fernández · 2026</span><span>Portada: Taj Mahal, India</span></div>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+const ICON={
+  helmet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18v-3a7 7 0 0114 0v3"/><path d="M10 8V5h4v3M12 5v4"/></svg>',
+  cube:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>',
+  globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>',
+  ny:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l4-2v14M9 21V4l6 3v14M15 21v-9l4 2v7"/></svg>'
+};
+
+/* ---- PROYECTOS: edita aquí textos e imágenes ---- */
+const P=[
+ {id:"oficios",n:"Mapa de oficios",c:"#FFB020",icon:"helmet",y:"2026–hoy",
+  r:"Proyecto actual · con Alejandro Kamuchey · reto final de LEINN",k:"Unas 14 entrevistas y visitas al sector",
+  d:"La construcción y las reformas en Bizkaia tienen trabajo de sobra y no encuentran relevo. Hemos hablado con constructoras, reformistas, electricistas, instaladores, centros de FP e instituciones del sector, e incluso pasamos un día trabajando en obra. La conclusión: no basta con captar jóvenes, hay que modernizar cómo trabaja la empresa. Con eso hemos montado un sistema de obra que funciona con lo que la gente ya usa: una nota de voz, una foto o un correo. Yo llevo la parte de captación y retención de talento; Alejandro, la digitalización.",
+  nums:["Parte de obra por voz","Factura por foto","Margen de cada obra","Captación y retención","Ayudas de digitalización"],
+  l:"Escuchar al sector antes de venderle nada, y llevar a cada reunión algo ya montado con sus datos.",
+  img:"assets/oficios-portada.jpg",alt:"Mapa de oficios",cap:"Mapa de oficios · Bizkaia, 2026",
+  thumbs:["assets/oficios-visita.jpg","assets/oficios-obra.jpg","assets/oficios-demo.jpg"]},
+ {id:"fs",n:"Football Society",c:"#F53B1E",logo:"assets/fs-logo.png",mkbg:"#000",y:"2023–hoy",
+  r:"Fundador · marca, contenido y operaciones",k:"9 torneos en 3 países",
+  d:"Marca y empresa de eventos de fútbol competitivo para cuadrillas. Cubrimos el hueco entre el fútbol federado (demasiado exigente) y los torneos de barrio (sin organización). Todos los posts y la coordinación de cada torneo, liderados por mí.",
+  nums:["+3.500 jugadores","España, India y Corea","+32.000€ (2026)","+5M interacciones en redes"],
+  l:"Montar una marca desde cero, venderla a patrocinadores y coordinar a miles de personas en un mismo día.",
+  img:"assets/fs-playa.jpg",alt:"Torneo de Football Society en la playa",cap:"Torneo en la playa · con patrocinadores como Coviran, Errea, Kaiku o El Correo",
+  thumbs:["assets/fs-equipo.jpg","assets/fs-jugadores.jpg","assets/fs-patrocinadores.png"]},
+ {id:"v360",n:"360 Visuals",c:"#2F8FE0",icon:"cube",y:"2024–hoy",
+  r:"Tours virtuales 3D y tecnología NFC · Nueva York y Bilbao",k:"Prototipado y validado en NY y Bilbao",
+  d:"Escaneamos espacios en 3D para que se puedan recorrer desde el móvil: gimnasios, tiendas, laboratorios y autocaravanas. En gimnasios añadimos etiquetas NFC en las máquinas que abren un vídeo con el ejercicio. Clientes y pruebas con Bilbao Kirolak, Metropolitan, Crunch Fitness, Solace New York, Embassy o Makery Bilbo Lab.",
+  nums:["Tours 3D (Matterport)","NFC en máquinas","Bilbao Kirolak","Crunch Fitness NY"],
+  l:"Vender tecnología a negocios físicos y explicar en dos minutos por qué les hace ganar clientes.",
+  img:"assets/360-bilbao-kirolak.png",fit:"contain",bg:"#000",alt:"Planta 3D de un polideportivo de Bilbao Kirolak",cap:"Escaneo 3D completo de un polideportivo de Bilbao Kirolak",
+  thumbs:["assets/360-solace-ny.jpg","assets/360-qfitness.jpg","assets/360-nfc.jpg"]},
+ {id:"redes",n:"Contenido y redes",c:"#A855F7",icon:"play",y:"2023–hoy",
+  r:"Estrategia viral para proyectos propios y clientes",k:"+10 millones de interacciones",
+  d:"Gestión de redes, contenido y estrategia viral para proyectos propios y para clientes como Mondragon Unibertsitatea, Autocaravanas Getxo y Football Society. Idea, guion, grabación y edición, con Meta Ads cuando hace falta empujar.",
+  nums:["Mondragon Unibertsitatea","Autocaravanas Getxo","Football Society","526K visualizaciones en 30 días"],
+  l:"Saber qué hace que un vídeo funcione y convertir esa atención en clientes.",
+  img:"assets/contenido-viral.jpg",tall:1,alt:"Vídeo de contenido con 35,9 mil visualizaciones",cap:"Uno de los vídeos: 35,9 mil visualizaciones"},
+ {id:"intl",n:"India y Corea",c:"#19C2A0",icon:"globe",y:"2025–2026",
+  r:"Líder de proyecto · validación de modelos de negocio",k:"Proyectos en 3 continentes",
+  d:"Llevé nuestros modelos de negocio a India y Corea del Sur para validarlos sobre el terreno: reuniones con empresas, eventos desde cero y torneos de Football Society en Pune. Antes, en Berlín y Nueva York, ya habíamos montado eventos y conexiones partiendo de nada.",
+  nums:["Pune, India","Seúl, Corea del Sur","Berlín","Nueva York"],
+  l:"Abrir puertas en un país donde no conoces a nadie y adaptar el discurso a cada cultura.",
+  img:"assets/india-oficina.jpg",alt:"Reunión con una empresa en India",cap:"Reunión con una empresa en India",
+  thumbs:["assets/corea.jpg","assets/india-dibujo.jpg","assets/fs-cartel-india.jpg"]}
+];
+
+/* ---- REFORMAS: qué aporto a una empresa de reformas ---- */
+const SK=[
+ {t:"Partes de obra por voz",d:"El encargado manda un audio de 30 segundos al acabar el día y sale el parte ordenado: quién ha estado, horas, avance, material que falta e incidencias. La oficina se entera ese mismo día, no cuando ya es tarde.",s:["oficios"]},
+ {t:"Facturas y margen de cada obra",d:"Una foto a la factura del proveedor y se cruza sola con el pedido y el presupuesto: avisa si falta el pedido, si no cuadra o si un capítulo se pasa. Ves cuánto ibas a ganar en cada obra y cuánto llevas. Y te ayudo a pedir las ayudas de digitalización para pagarlo.",s:["oficios","rivia"]},
+ {t:"Captar y retener gente joven",d:"Ofertas que cuentan qué ofrece la empresa, condiciones claras, formación interna y una cultura en la que la gente quiera quedarse. Sé qué mueve a la gente de 18 a 25 años y cómo hablarle.",s:["oficios","fs"]},
+ {t:"Enseñar tus obras",d:"Tours 3D de las reformas terminadas y vídeos de antes y después, para que el cliente vea tu trabajo antes de llamarte y cierres presupuestos con menos visitas.",s:["v360","redes"]},
+ {t:"Captación de clientes",d:"Campañas en Meta Ads, redes con contenido y una web clara, con un seguimiento ordenado para que ninguna solicitud de presupuesto se quede sin respuesta.",s:["redes","v360"]}
+];
+
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $=s=>document.querySelector(s);
+const mark=p=>p.logo?'<img src="'+p.logo+'" alt="">':ICON[p.icon];
+
+/* rail */
+const rail=$("#rail");
+P.forEach((p,i)=>{
+  const b=document.createElement("button");
+  b.className="wp";b.type="button";b.setAttribute("role","tab");b.id="tab-"+p.id;
+  b.setAttribute("aria-controls","panel");b.setAttribute("aria-selected","false");b.tabIndex=-1;
+  b.style.setProperty("--pc",p.c);if(p.mkbg)b.style.setProperty("--mkbg",p.mkbg);
+  b.innerHTML='<span class="mk">'+mark(p)+'</span><span class="nm">'+p.n+'</span>';
+  b.addEventListener("click",()=>select(i));
+  b.addEventListener("keydown",e=>{
+    if(e.key==="ArrowRight"){e.preventDefault();select((cur+1)%P.length,true)}
+    if(e.key==="ArrowLeft"){e.preventDefault();select((cur-1+P.length)%P.length,true)}
+  });
+  rail.appendChild(b);
+});
+const tabs=[...rail.querySelectorAll(".wp")];
+const panel=$("#panel"),body=$("#pbody"),st=$("#st"),st2=$("#st2");
+let cur=-1;
+
+function render(p){
+  const style=(p.fit?'object-fit:'+p.fit+';':'')+(p.bg?'background:'+p.bg+';':'');
+  const thumbs=p.thumbs?'<div class="thumbs">'+p.thumbs.map(t=>'<img src="'+t+'" alt="" loading="lazy">').join("")+'</div>':"";
+  body.innerHTML=
+   '<div><h3 class="ptitle">'+p.n+'</h3><p class="prole">'+p.r+'</p>'+
+   '<dl class="plabel"><div><dt class="osd">Año</dt><dd>'+p.y+'</dd></div><div class="hl"><dt class="osd">Dato</dt><dd>'+p.k+'</dd></div></dl>'+
+   '<p class="pdesc">'+p.d+'</p>'+
+   '<div class="pnums">'+p.nums.map(n=>'<span>'+n+'</span>').join("")+'</div>'+
+   '<div class="took"><span class="osd">Lo que me llevé</span><p>'+p.l+'</p></div></div>'+
+   '<figure class="shot"><div class="img'+(p.tall?' tall':'')+'"><img src="'+p.img+'" alt="'+p.alt+'" style="'+style+'"></div>'+thumbs+'<figcaption class="meta osd">'+p.cap+'</figcaption></figure>';
+  guard(body);
+}
+function select(i,focus){
+  if(i===cur)return;
+  const prev=cur;cur=i;const p=P[i];
+  tabs.forEach((t,j)=>{t.setAttribute("aria-selected",j===i);t.tabIndex=j===i?0:-1});
+  panel.setAttribute("aria-labelledby","tab-"+p.id);
+  panel.style.setProperty("--c",p.c);
+  if(focus)tabs[i].focus();
+  st.textContent=String(i+1).padStart(2,"0")+" / "+String(P.length).padStart(2,"0")+" · "+p.n;
+  st2.textContent=p.y;
+  if(prev<0||reduce){render(p);return}
+  body.classList.add("out");
+  setTimeout(()=>{render(p);body.classList.remove("out")},260);
+}
+select(0);
+
+/* reformas */
+const SRC={rivia:{n:"Rivia",c:"#EFEEEC"}};
+const sk=$("#skills");
+SK.forEach((s,k)=>{
+  const row=document.createElement("div");row.className="sk rv";
+  const src=s.s.map(id=>P.find(p=>p.id===id)||Object.assign({id},SRC[id]));
+  row.style.setProperty("--a",src[0].c);
+  const chips=src.map(p=>'<button type="button" data-go="'+p.id+'" style="--pc:'+p.c+'">'+p.n+'</button>').join("");
+  row.innerHTML='<span class="num">'+String(k+1).padStart(2,"0")+'</span><h3>'+s.t+'</h3><div><p>'+s.d+'</p><div class="from osd">Sale de '+chips+'</div></div>';
+  sk.appendChild(row);
+});
+sk.addEventListener("click",e=>{
+  const b=e.target.closest("[data-go]");if(!b)return;
+  const id=b.dataset.go;
+  if(id==="rivia"){$("#rivia").scrollIntoView({behavior:reduce?"auto":"smooth"});return}
+  const i=P.findIndex(p=>p.id===id);
+  $("#proyectos").scrollIntoView({behavior:reduce?"auto":"smooth"});
+  setTimeout(()=>select(i),reduce?0:650);
+});
+
+/* imágenes que falten: muestra un hueco con el nombre del archivo */
+function guard(root){
+  root.querySelectorAll("img").forEach(img=>{
+    const fail=()=>{const d=document.createElement("div");d.className="ph "+img.className;d.dataset.src=img.getAttribute("src");d.style.cssText=img.style.cssText;img.replaceWith(d)};
+    if(img.complete&&img.naturalWidth===0&&img.getAttribute("src"))fail();else img.addEventListener("error",fail,{once:true});
+  });
+}
+guard(document);
+
+/* reveals + nav */
+document.documentElement.classList.add("js");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll(".rnav a")];
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  links.forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+e.target.id));
+  document.querySelector(".rnav").classList.toggle("light",e.target.id==="leinn");
+}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("[data-sec]").forEach(s=>so.observe(s));
+
+/* hero entrance */
+const hero=$(".hero");
+if(!reduce){
+  hero.classList.add("boot");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{hero.classList.add("go");hero.classList.remove("boot")}));
+}
+})();
+</script>
+</body>
+</html>
